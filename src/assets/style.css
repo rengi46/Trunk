@@ -1,0 +1,24 @@
+.align{
+    text-align: center;
+}
+.iconTrunk{
+    max-width: 37px;
+    max-height: 37px;
+    margin-right: 20px;
+    position: relative;
+    top: -6px;
+}
+.buscador{
+    position: absolute;
+    top: 10px;
+    left: 40%;
+}
+.headTrunk{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.SidebarPequeño{
+    max-width: 20% !important;
+}
