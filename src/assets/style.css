@@ -20,5 +20,16 @@
 }
 
 .SidebarPequeño{
-    max-width: 20% !important;
+    width: 20% !important;
+}
+.blanco{
+    background-color: aliceblue;
+    border-radius: 50px;
+}
+.contenedor{
+    
+    width: 80%;
+}
+.pagina{
+    display: flex;
 }
