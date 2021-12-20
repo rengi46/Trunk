@@ -72,24 +72,6 @@
       </div>
       <div class="row row1">
 
-  
-      <div class="cardArchivo" style='background-image: url("./img/carpeta.png")';>
-        <div><img class="iconTrunk" src=<?= extension("pdf")?>></div>
-        <div><h3>nombre archivo</h3></div>
-      </div>
-      <img class="container-images-img" src=<?= extension("ppt") ?> />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
-      <img class="container-images-img" src="./img/carpeta.png" />
     <?php PonerArchivos($direcion) ?></div>
   </div>
 </body>

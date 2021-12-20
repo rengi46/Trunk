@@ -46,20 +46,17 @@ function PonerArchivos($path){
                 
             } else {
             ?>
-            <li class="nav-item">
-              <a href="<?= $hre."?".$value ?>"" class="nav-link " aria-current="page">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#home"></use>
-                </svg>
-                <?= $nombre_archivo, $tipo_archivo ?>
-              </a>
-            </li>
+            <div class="cardArchivo" style='background-image: url("./img/carpeta.png")';>
+              <div><img class="iconTrunk" src=<?= extension($tipo_archivo)?>></div>
+              <div><h3><?= $nombre_archivo?></h3></div>
+            </div>
     
                 <?php
             }
         }
     }
 }
+
 function extension($i){
 switch($i){
   case "doc":
@@ -106,7 +103,6 @@ switch($i){
     break;
 }
 }
-
 
 function obtener_tipo_archivo($path){
     $info = pathinfo($path);
