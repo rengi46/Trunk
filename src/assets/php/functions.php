@@ -6,7 +6,7 @@ function ponerCarpeta($path){
  // Abrimos la carpeta que nos pasan como parámetro
     $dir = scandir($path);
  // Leo todos los ficheros de la carpeta
- if( dirname($path) != "." && dirname($path) != ".."){
+  if( dirname($path) != "." && dirname($path) != ".."){
 
     }
     foreach ($dir as $x => $value) {
@@ -32,12 +32,15 @@ function ponerCarpeta($path){
 
 
 function PonerArchivos($path){
-    $hre="./php/leerCarpeta.php";
- // Abrimos la carpeta que nos pasan como parámetro
-    $dir = scandir($path);
- // Leo todos los ficheros de la carpeta
-    foreach ($dir as $x => $value) {
-        if( $value != "." && $value != ".."){
+  
+  $hre="./php/leerCarpeta.php";
+  // Abrimos la carpeta que nos pasan como parámetro
+  $dir = scandir($path);
+  // Leo todos los ficheros de la carpeta
+  foreach ($dir as $x => $value) {
+    if( $value != "." && $value != ".."){
+          $nombre_archivo = obtener_nombre_archivo($path."/".$value);
+          $tipo_archivo = obtener_tipo_archivo($path."/".$value);
     // Si es una carpeta
             if( is_dir($path."/".$value) ){
                 
@@ -48,7 +51,7 @@ function PonerArchivos($path){
                 <svg class="bi me-2" width="16" height="16">
                   <use xlink:href="#home"></use>
                 </svg>
-                <?= $path."/".$value ?>
+                <?= $nombre_archivo, $tipo_archivo ?>
               </a>
             </li>
     
@@ -56,6 +59,18 @@ function PonerArchivos($path){
             }
         }
     }
+}
+
+function obtener_tipo_archivo($path){
+    $info = pathinfo($path);
+    $tipo = $info['extension'];
+    return $tipo;
+}
+
+function obtener_nombre_archivo($path){
+    $info = pathinfo($path);
+    $nombre = $info['filename'];
+    return $nombre;
 }
 
 ?>

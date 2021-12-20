@@ -2,6 +2,8 @@
 
 $carepta_actual = $_GET["carpeta"];
 $ruta_carpeta=obtener_estructura_directorios("../root",$carepta_actual);
+PonerArchivos($ruta_carpeta);
+
 echo $ruta_carpeta;
 header("Location: ../index2.php?carpeta=".$ruta_carpeta);
 
