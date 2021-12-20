@@ -72,18 +72,12 @@
       </div>
       <div class="row row1">
 
-        <div class=" cardArchivo rounded shadow-sm py-5 px-4"><img src="./img/icons8-pdf-2-96.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-          <h5 class="mb-0">Document name</h5><span class="small text-uppercase text-muted">Last Edit 20/12/2020</span>
-          <ul class="social mb-0 list-inline mt-3">
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
+  
+      <div class="cardArchivo" style='background-image: url("./img/carpeta.png")';>
+        <div><img class="iconTrunk" src=<?= extension("pdf")?>></div>
+        <div><h3>nombre archivo</h3></div>
       </div>
-
-      <img class="container-images-img" src="./img/carpeta.png" />
+      <img class="container-images-img" src=<?= extension("ppt") ?> />
       <img class="container-images-img" src="./img/carpeta.png" />
       <img class="container-images-img" src="./img/carpeta.png" />
       <img class="container-images-img" src="./img/carpeta.png" />

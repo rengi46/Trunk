@@ -60,6 +60,53 @@ function PonerArchivos($path){
         }
     }
 }
+function extension($i){
+switch($i){
+  case "doc":
+    return "./img/word.png";
+    break;
+  case "csv":
+    return "./img/csv.png";
+    break;
+  case "jpg":
+    return "./img/jpg.png";
+    break;
+  case "png":
+    return "./img/png.png";
+    break;
+  case "txt":
+    return "./img/txt.png";
+    break;
+  case "ppt":
+    return "./img/power.png";
+    break;
+  case "odt":
+    return "./img/odt.png";
+    break;
+  case "pdf":
+    return "./img/pdf.png";
+    break;
+  case "zip":
+    return "./img/zip.png";
+    break;
+  case "rar":
+    return "./img/rar.png";
+    break;
+  case "exe":
+    return "./img/excel.png";
+    break;
+  case "svg":
+    return "./img/svg.png";
+    break;
+  case "mp3":
+    return "./img/mp3.png";
+    break;
+  case "mp4":
+    return "./img/mp4.png";
+    break;
+}
+}
+
 
 function obtener_tipo_archivo($path){
     $info = pathinfo($path);

@@ -40,9 +40,6 @@
 
 
 
-
-
-
 .container-title{
     padding: 5%;
     font-size: 25px;
@@ -63,7 +60,7 @@
 }
 
 .container-images-img {
-    padding: 30px;
+    padding: 20px;
     transition: transform .2s;
     width: 200px;
     height: 200px;
@@ -75,12 +72,20 @@
     transform: scale(1.5);
 }
 .cardArchivo{
-background-image: url("./img/carpeta.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    background-size: contain;
 }
 
+
 .social-link {
-   width: 30px;
-   height: 30px;
+   width: 20px;
+   height: 20px;
    border: 1px solid #ddd;
    display: flex;
    align-items: center;
