@@ -7,8 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
   <title>Trunk</title>
 </head>
@@ -34,7 +33,7 @@
     </div>
   </header>
   <div class="pagina" style="height:95vh">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark SidebarGrande">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark SidebarPequeño">
       <!-- <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> -->
       <div class="align ">
         <div>
@@ -49,8 +48,7 @@
       </ul>
       <hr>
       <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
-          data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
           <strong>mdo</strong>
         </a>
@@ -65,7 +63,32 @@
         </ul>
       </div>
     </div>
-    <div class="contenedor"></div>
+    <div class="contenedor">
+      <div class="container-title">
+        <h4>?Ruta de Carpeta?</h4>
+      </div>
+      <div class="row row1">
+
+        <div><img class="container-images-img" src="./img/carpeta.png" />
+          <p id="nameFolder">Folder Name</p>
+        </div>
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+        <img class="container-images-img" src="./img/carpeta.png" />
+      </div>
+    </div>
+  </div>
+  </div>
   </div>
 </body>
 
