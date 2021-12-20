@@ -72,8 +72,16 @@
     transform: scale(1.5);
 }
 .cardArchivo{
-background-image: url("./img/carpeta.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2em;
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    background-size: contain;
 }
+
 
 .social-link {
    width: 20px;
