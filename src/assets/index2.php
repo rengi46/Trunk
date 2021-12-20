@@ -34,7 +34,7 @@
     </div>
   </header>
   <div class="pagina" style="height:95vh">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark SidebarGrande">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark SidebarPequeño">
       <!-- <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> -->
       <div class="align ">
         <div>
@@ -45,8 +45,8 @@
       <!-- </a> -->
       <hr>
       <ul class="align nav nav-pills flex-column mb-auto">
-        <?php 
-        ponerCarpeta("./root") ?>
+        <?php $direcion=$_GET["carpeta"];
+         ponerCarpeta("$direcion") ?>
       </ul>
       <hr>
       <div class="dropdown">
@@ -66,7 +66,7 @@
         </ul>
       </div>
     </div>
-    <div class="contenedor"></div>
+    <div class="contenedor"><?php PonerArchivos($direcion) ?></div>
   </div>
 </body>
 
