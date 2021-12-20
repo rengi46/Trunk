@@ -26,8 +26,12 @@
         </form>
 
         <div class="text-end">
+          <a href="./php/login/login.php">
           <button type="button" class="btn btn-outline-light me-2">Login</button>
+          </a>
+          <a href="./php/login/SingIn.php">
           <button type="button" class="btn btn-warning">Sign-up</button>
+          </a>
         </div>
       </div>
     </div>
