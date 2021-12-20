@@ -1,3 +1,5 @@
+<?php require_once("./php/functions.php") ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +34,7 @@
     </div>
   </header>
   <div class="pagina" style="height:95vh">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark SidebarPequeño">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark SidebarGrande">
       <!-- <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> -->
       <div class="align ">
         <div>
@@ -43,46 +45,7 @@
       <!-- </a> -->
       <hr>
       <ul class="align nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a href="#" class="nav-link active" aria-current="page">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#home"></use>
-            </svg>
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#speedometer2"></use>
-            </svg>
-            Dashboard
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#table"></use>
-            </svg>
-            Orders
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#grid"></use>
-            </svg>
-            Products
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link text-white">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#people-circle"></use>
-            </svg>
-            Customers
-          </a>
-        </li>
+        <?php unirContenidosFicheros("./root") ?>
       </ul>
       <hr>
       <div class="dropdown">

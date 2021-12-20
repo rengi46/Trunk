@@ -22,6 +22,10 @@
 .SidebarPequeño{
     width: 20% !important;
 }
+
+.SidebarGrande{
+    width: 100% !important;
+}
 .blanco{
     background-color: aliceblue;
     border-radius: 50px;
