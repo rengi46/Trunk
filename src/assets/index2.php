@@ -73,7 +73,7 @@
     </div>
     <div class="contenedor">
     <div class="container-title">
-        <h4>?Ruta?</h4>
+        <h4><?=$direcion?></h4>
       </div>
       <div class="row row1">
 
@@ -88,7 +88,7 @@
   <!-- Modal content -->
   <div class="modal-con">
     <span class="close">&times;</span>
-<form name="hola" class="row gy-2 gx-3 align-items-center" action="./php/CrearArchivo.php" method="POST">
+<form name="hola" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
   <div class="col-auto">
     <label class="visually-hidden" for="autoSizingInput">Name</label>
     <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">

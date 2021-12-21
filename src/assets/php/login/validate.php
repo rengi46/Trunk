@@ -1,6 +1,6 @@
 <?php
 // in_array
-$fil="C:/xampp/htdocs/php/proyectos/Trunk/src/assets/json/users.json";
+$fil="../../json/users.json";
 $Allusers= file_get_contents($fil);
 $usersAll= json_decode($Allusers);
 

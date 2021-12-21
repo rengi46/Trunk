@@ -3,7 +3,7 @@
 if(isset($_POST)){
     $arr_clients= array("name" =>$_POST["name"],"email"=> $_POST["email"], "password" => $_POST["password"] );
     // $json_string = json_encode($arr_clients);
-    $file="C:/xampp/htdocs/php/proyectos/Trunk/src/assets/json/users.json";
+    $file="../../json/users.json";
     $Allusers= file_get_contents($file);
     $usersAll= json_decode($Allusers);
     // print_r($Allusers);
