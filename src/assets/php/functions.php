@@ -39,12 +39,13 @@ function PonerArchivos($path){
   // Leo todos los ficheros de la carpeta
   foreach ($dir as $x => $value) {
     if( $value != "." && $value != ".."){
-          $nombre_archivo = obtener_nombre_archivo($path."/".$value);
-          $tipo_archivo = obtener_tipo_archivo($path."/".$value);
+         
     // Si es una carpeta
             if( is_dir($path."/".$value) ){
                 
             } else {
+              $nombre_archivo = obtener_nombre_archivo($path."/".$value);
+              $tipo_archivo = obtener_tipo_archivo($path."/".$value);
             ?>
             <div class="cardArchivo" style='background-image: url("./img/carpeta.png")';>
               <div><img class="iconTrunk" src=<?= extension($tipo_archivo)?>></div>
@@ -83,6 +84,7 @@ switch($i){
   case "pdf":
     return "./img/pdf.png";
     break;
+
   case "zip":
     return "./img/zip.png";
     break;
@@ -117,3 +119,5 @@ function obtener_nombre_archivo($path){
 }
 
 ?>
+
+

@@ -88,34 +88,25 @@
   <!-- Modal content -->
   <div class="modal-con">
     <span class="close">&times;</span>
-    <form class="row gy-2 gx-3 align-items-center">
+<form name="hola" class="row gy-2 gx-3 align-items-center" action="./php/CrearArchivo.php" method="POST">
   <div class="col-auto">
     <label class="visually-hidden" for="autoSizingInput">Name</label>
-    <input type="text" class="form-control" id="autoSizingInput" placeholder="Jane Doe">
-  </div>
-  <div class="col-auto">
-    <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
-    <div class="input-group">
-      <div class="input-group-text">@</div>
-      <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Username">
-    </div>
+    <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
   </div>
   <div class="col-auto">
     <label class="visually-hidden" for="autoSizingSelect">Preference</label>
-    <select class="form-select" id="autoSizingSelect">
-      <option selected>Choose...</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+    <select name="ext" class="form-select" id="autoSizingSelect">
+      <option value="Carpeta" selected>Folder</option>
+      <?php
+      $ext=array("doc","csv","jpg","png","txt","ppt","odt","pdf","zip","rar","exe","svg","mp3","mp4");
+      foreach( $ext as $ex){
+        ?>
+        <option value=<?=".".$ex?>><?=$ex?></option>
+        <?php
+      }
+      ?>
     </select>
-  </div>
-  <div class="col-auto">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-      <label class="form-check-label" for="autoSizingCheck">
-        Remember me
-      </label>
-    </div>
+    <input type="hidden" name="url" value=<?=$direcion?> />
   </div>
   <div class="col-auto">
     <button type="submit" class="btn btn-primary">Submit</button>
