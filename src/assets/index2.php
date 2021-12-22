@@ -84,7 +84,7 @@ $direcion=$_GET["carpeta"];
     </div>
     <div class="contenedor">
     <div class="container-title">
-        <input class='route'><?=$direcion?></input>
+        <input class='' style='width:100%' value='<?=$direcion?>'></input><button onclick="myFunction()">Copy text</button>
       </div>
       <div class="row row1">
 

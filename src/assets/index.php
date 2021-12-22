@@ -46,9 +46,6 @@ $nuevaDirecconCompleta = realpath($nuevaDireccon);
           <a href="./php/login/close_session.php">
           <button type="button" class="btn btn-outline-light me-2">LogOut</button>
           </a>
-          <a href="./php/login/SingIn.php">
-          <button type="button" class="btn btn-warning">Sign-up</button>
-          </a>
         </div>
       </div>
     </div>
