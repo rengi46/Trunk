@@ -70,8 +70,19 @@
 }
 
 
+.align {
+    text-align: center;
+}
 
+.uploadButton {
+    background-color: aliceblue;
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+    position: relative;
+    border-radius: 150px;
 
+}
 
 .align {
     text-align: center;
@@ -205,4 +216,8 @@
     background: #ddd;
     text-decoration: none;
     color: #555;
+}
+
+.leftBorder {
+    color: #2b6777 !important;
 }
