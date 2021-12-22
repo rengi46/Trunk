@@ -24,8 +24,9 @@
           <span class="align fs-4">Trunks</span>
         </div>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        <form action="./php/buscador.php" method='POST' name= 'form' class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input name='busqueda' type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+          <button type='submit'>lupa</button>
         </form>
 
         <div class="text-end">
