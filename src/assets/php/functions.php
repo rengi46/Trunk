@@ -37,10 +37,8 @@ function PonerArchivos($path){
   // Leo todos los ficheros de la carpeta
   foreach ($dir as $x => $value) {
     if( $value != "." && $value != ".."){
-         
     // Si es una carpeta
             if( is_dir($path."/".$value) ){
-                
             } else {
               $nombre_archivo = obtener_nombre_archivo($path."/".$value);
               $tipo_archivo = obtener_tipo_archivo($path."/".$value);
@@ -49,9 +47,9 @@ function PonerArchivos($path){
               <div><img class="iconTrunk" src=<?= extension($tipo_archivo)?>></div>
               <div><h3><?= $nombre_archivo?></h3></div>
               <ul class="social mb-0 list-inline mt-3">
-                    <li class="list-inline-item"><a href="#?file="<?=$nombre_archivo.$tipo_archivo?> class="social-link"><i class="fa fa-edit"></i></a></li>
-                    <li class="list-inline-item"><a href="#?file="<?=$nombre_archivo.$tipo_archivo?> class="social-link"><i class="fa fa-directions"></i></a></li>
-                    <li class="list-inline-item"><a href="#?file="<?=$nombre_archivo.$tipo_archivo?> class="social-link"><i class="fa fa-trash-alt"></i></a></li>
+                    <li  class="list-inline-item rename"><a class="social-link"><i class="fa fa-edit"></i></a></li>
+                    <li  class="list-inline-item move"><a href="#?file="<?=$nombre_archivo?> class="social-link"><i class="fa fa-directions"></i></a></li>
+                    <li class="list-inline-item"><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link"><i class="fa fa-trash-alt"></i></a></li>
                 </ul>
             </div>
     
@@ -119,6 +117,49 @@ function obtener_nombre_archivo($path){
     $info = pathinfo($path);
     $nombre = $info['filename'];
     return $nombre;
+}
+
+function obtener_estructura_directorios($ruta,$buscar){
+  global $bdf;
+  // Se comprueba que realmente sea la ruta de un directorio
+  // echo $ruta;
+  if (is_dir($ruta)){
+      // echo "asgyuahbs";
+      // Abre un gestor de directorios para la ruta indicada
+      $gestor = opendir($ruta);
+      // Recorre todos los elementos del directorio
+      while (($archivo = readdir($gestor)) !== false)  {
+          $ruta_completa = $ruta . "/" . $archivo;
+          // echo $ruta_completa;
+          // echo "</br>";
+          // Se muestran todos los archivos y carpetas excepto "." y ".."
+          if ($archivo != "." && $archivo != "..") {
+              // Si es un directorio se recorre recursivamente
+              if (is_dir($ruta_completa)) {
+                if($archivo==$buscar){
+                      $bdf = (realpath($ruta_completa));
+                      return $bdf;
+                  }
+                  if($bdf == null){
+                      obtener_estructura_directorios($ruta_completa,$buscar);
+                  }
+                  if($bdf == null){
+                  }
+                  else {
+                      return $bdf;
+                  }
+              }else{
+                if($archivo==$buscar){
+                  $bdf = (realpath($ruta_completa));
+                  // echo $bdf;
+                  return $bdf;
+              }
+              }
+          }
+      }
+      closedir($gestor);
+  }
+      // Cierra el gestor de directorios
 }
 
 ?>

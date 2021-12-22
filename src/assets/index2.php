@@ -89,7 +89,7 @@
   <!-- Modal content -->
   <div class="modal-con">
     <span class="close">&times;</span>
-<form name="hola" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
+  <form name="hola" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
   <div class="col-auto">
     <label class="visually-hidden" for="autoSizingInput">Name</label>
     <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
@@ -112,10 +112,28 @@
   <div class="col-auto">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
-</form>
+  </form>
+ </div>
 </div>
 
+<div id="myModal2" class="modal25">
+
+  <!-- Modal content -->
+  <div class="modal-con2">
+    <span class="close">&times;</span>
+  <form name="hola2" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">Name</label>
+    <input name="nameFile2" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
 </div>
+
+
+
 
 </body>
 
