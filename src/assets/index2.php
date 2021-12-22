@@ -7,9 +7,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/script.js" defer></script>
   <title>Trunk</title>
@@ -20,6 +19,7 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start  headTrunk">
         <div>
+
           <img class="iconTrunk" src="./img/icono trrunk.png" alt="">
           <span class="align fs-4">Trunks</span>
         </div>
@@ -29,11 +29,9 @@
         </form>
 
         <div class="text-end">
-        <a href="./php/login/login.php">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
+          <a href="./php/login/login.php">
+            <button type="button" class="btn btn-outline-light me-2">Logout</button>
           </a>
-          <a href="./php/login/SingIn.php">
-          <button type="button" class="btn btn-warning">Sign-up</button>
           </a>
         </div>
       </div>
@@ -44,78 +42,67 @@
       <!-- <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> -->
       <div class="align ">
         <div>
-          <img class="blanco" src="./img/add-folder.png" id="mybtn"/>
+          <img class="uploadButton" src="./img/upload.png" />
+          <img class="blanco" src="./img/add-folder.png" id="mybtn" />
 
         </div>
       </div>
       <!-- </a> -->
       <hr>
       <ul class="align nav nav-pills flex-column mb-auto">
-        <?php $direcion=$_GET["carpeta"];
-         ponerCarpeta("$direcion") ?>
+        <?php $direcion = $_GET["carpeta"];
+        ponerCarpeta("$direcion") ?>
       </ul>
       <hr>
       <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
-          data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-          <strong>mdo</strong>
+          <strong>User Name</strong>
         </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-          <li><a class="dropdown-item" href="#">New project...</a></li>
-          <li><a class="dropdown-item" href="#">Settings</a></li>
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <li><a class="dropdown-item" href="#">Sign out</a></li>
-        </ul>
       </div>
     </div>
     <div class="contenedor">
-    <div class="container-title">
-        <h4><?=$direcion?></h4>
+      <div class="container-title">
+        <h4><?= $direcion ?></h4>
       </div>
       <div class="row row1">
 
-    <?php PonerArchivos($direcion) ?></div>
-  </div>
+        <?php PonerArchivos($direcion) ?></div>
+    </div>
 
 
 
-<!-- The Modal -->
-<div id="myModal" class="modal24">
+    <!-- The Modal -->
+    <div id="myModal" class="modal24">
 
-  <!-- Modal content -->
-  <div class="modal-con">
-    <span class="close">&times;</span>
-<form name="hola" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
-  <div class="col-auto">
-    <label class="visually-hidden" for="autoSizingInput">Name</label>
-    <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
-  </div>
-  <div class="col-auto">
-    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
-    <select name="ext" class="form-select" id="autoSizingSelect">
-      <option value="Carpeta" selected>Folder</option>
-      <?php
-      $ext=array("doc","csv","jpg","png","txt","ppt","odt","pdf","zip","rar","exe","svg","mp3","mp4");
-      foreach( $ext as $ex){
-        ?>
-        <option value=<?=".".$ex?>><?=$ex?></option>
-        <?php
-      }
-      ?>
-    </select>
-    <input type="hidden" name="url" value=<?=$direcion?> />
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-</form>
-</div>
+      <!-- Modal content -->
+      <div class="modal-con">
+        <span class="close">&times;</span>
+        <form name="hola" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
+          <div class="col-auto">
+            <label class="visually-hidden" for="autoSizingInput">Name</label>
+            <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
+          </div>
+          <div class="col-auto">
+            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+            <select name="ext" class="form-select" id="autoSizingSelect">
+              <option value="Carpeta" selected>Folder</option>
+              <?php
+              $ext = array("doc", "csv", "jpg", "png", "txt", "ppt", "odt", "pdf", "zip", "rar", "exe", "svg", "mp3", "mp4");
+              foreach ($ext as $ex) {
+              ?>
+                <option value=<?= "." . $ex ?>><?= $ex ?></option>
+              <?php
+              }
+              ?>
+            </select>
+            <input type="hidden" name="url" value=<?= $direcion ?> />
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
 
-</div>
+    </div>
 
 </body>
 

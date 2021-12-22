@@ -56,6 +56,8 @@ $userName=$_SESSION["email"];
       <!-- </a> -->
       <hr>
       <ul class="align nav nav-pills flex-column mb-auto">
+
+      
         <?php
         ponerCarpeta("./root/$userName") ?>
       </ul>
