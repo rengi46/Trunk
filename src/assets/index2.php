@@ -24,8 +24,9 @@
           <span class="align fs-4">Trunks</span>
         </div>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        <form action="./php/buscador.php" method='POST' name= 'form' class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input name='busqueda' type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+          <button type='submit'>lupa</button>
         </form>
 
         <div class="text-end">
@@ -73,36 +74,54 @@
     <!-- The Modal -->
     <div id="myModal" class="modal24">
 
-      <!-- Modal content -->
-      <div class="modal-con">
-        <span class="close">&times;</span>
-        <form name="hola" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
-          <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput">Name</label>
-            <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
-          </div>
-          <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
-            <select name="ext" class="form-select" id="autoSizingSelect">
-              <option value="Carpeta" selected>Folder</option>
-              <?php
-              $ext = array("doc", "csv", "jpg", "png", "txt", "ppt", "odt", "pdf", "zip", "rar", "exe", "svg", "mp3", "mp4");
-              foreach ($ext as $ex) {
-              ?>
-                <option value=<?= "." . $ex ?>><?= $ex ?></option>
-              <?php
-              }
-              ?>
-            </select>
-            <input type="hidden" name="url" value=<?= $direcion ?> />
-          </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
-      </div>
+  <!-- Modal content -->
+  <div class="modal-con">
+    <span class="close">&times;</span>
+  <form name="hola" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">Name</label>
+    <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
+  </div>
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select name="ext" class="form-select" id="autoSizingSelect">
+      <option value="Carpeta" selected>Folder</option>
+      <?php
+      $ext=array("doc","csv","jpg","png","txt","ppt","odt","pdf","zip","rar","exe","svg","mp3","mp4");
+      foreach( $ext as $ex){
+        ?>
+        <option value=<?=".".$ex?>><?=$ex?></option>
+        <?php
+      }
+      ?>
+    </select>
+    <input type="hidden" name="url" value=<?=$direcion?> />
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+ </div>
+</div>
 
-    </div>
+<div id="myModal2" class="modal25">
+
+  <!-- Modal content -->
+  <div class="modal-con2">
+    <span class="close">&times;</span>
+  <form name="hola2" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">Name</label>
+    <input name="nameFile2" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+</div>
+
+
+
 
 </body>
 
