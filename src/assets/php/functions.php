@@ -16,7 +16,7 @@ function ponerCarpeta($path){
                 // Muestro la carpeta
             ?>
             <li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta1?>'>
-            <i class="expanded"><i class="far fa-folder-open"></i></i><?= $value?></a>&nbsp; &nbsp;<a href="#?file=<?=$nombre_archivo?>" class="social-link-side"><i class="fa fa-edit side-icon"></i></a><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link-side"><i class="fa fa-trash-alt side-icon"></i></a></span>
+            <i class="expanded"><i class="far fa-folder-open"></i></i><?= $value?></a>&nbsp; &nbsp;<a  class="social-link-side"><i class="fa fa-edit side-icon move"></i></a><a class="social-link-side"><i class="fa fa-trash-alt side-icon rename"></i></a></span>
               <ul><div id="page1">
                   <?php $value2 = scandir($path."/".$value);
                         foreach ($value2 as $x => $value3) {
@@ -25,15 +25,15 @@ function ponerCarpeta($path){
                             $direccionCompleta2 = realpath($path."/".$value."/".$value3);
                             ?>
                             <li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta2?>'>
-                              <i class="expanded"><i class="far fa-folder-open"></i></i><?= $value3?></a>&nbsp; &nbsp;<a href="#?file=<?=$nombre_archivo?>" class="social-link-side"><i class="fa fa-edit side-icon"></i></a><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link-side"><i class="fa fa-trash-alt side-icon"></i></a></span>
+                              <i class="expanded"><i class="far fa-folder-open"></i></i><?= $value3?></a>&nbsp; &nbsp;<a  class="social-link-side"><i class="fa fa-edit side-icon move"></i></a><a  class="social-link-side"><i class="fa fa-trash-alt side-icon rename"></i></a></span>
                                 <ul><div id="Page2">
-                                    <?php $value4 = scandir($path."/".$value3);
+                                    <?php $value4 = scandir($direccionCompleta2);
                                       foreach ($value4 as $x => $value5) {
                                         if( $value5 != "." && $value5 != ".."){
                                         if( is_dir($path."/".$value."/".$value3."/".$value5) ){
-                                          $direccionCompleta2 = realpath($path."/".$value."/".$value3."/".$value5);
+                                          $direccionCompleta3 = realpath($path."/".$value."/".$value3."/".$value5);
                                           ?><li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta3?>'>
-                                          <i class="expanded"><i class="far fa-folder-open"></i></i><?=$value5?> </a>&nbsp; &nbsp;<a href="#?file=<?=$nombre_archivo?>" class="social-link-side"><i class="fa fa-edit side-icon"></i></a><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link-side"><i class="fa fa-trash-alt side-icon"></i></a></span>
+                                          <i class="expanded"><i class="far fa-folder-open"></i></i><?=$value5?> </a>&nbsp; &nbsp;<a  class="social-link-side"><i class="fa fa-edit side-icon move"></i></a><a  class="social-link-side"><i class="fa fa-trash-alt side-icon rename"></i></a></span>
                                             <ul><div id="page3">
                                         </div>
                                       </ul>

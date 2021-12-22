@@ -131,13 +131,31 @@ $direcion=$_GET["carpeta"];
   <!-- Modal content -->
   <div class="modal-con">
     <span class="close">&times;</span>
-  <form name="hola2" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
+  <form name="hola2" class="row gy-2 gx-3 align-items-center" action="./php/renameFile.php" method="POST">
   <div class="col-auto">
     <label class="visually-hidden" for="autoSizingInput">Name</label>
-    <input name="nameFile2" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
+    <input name="Nuevo" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
+    <input type="hidden" name="url" value=<?=$direcion?> />
   </div>
   <div class="col-auto">
     <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+</div>
+
+
+<div id="myModal3" class="modal26">
+
+  <!-- Modal content -->
+  <div class="modal-con">
+    <span class="close">&times;</span>
+  <form name="hola3" class="row gy-2 gx-3 align-items-center" action="../assets/php/deleteDirectory.php" method="POST">
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">You are going to delete the file.</br>Are you sure?</label>
+    <input type="hidden" name="url" value=<?=$direcion?> />
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Delete</button>
   </div>
   </form>
 </div>
