@@ -1,4 +1,5 @@
-<?php require_once("./php/functions.php") ?>
+<?php require_once("./php/functions.php");
+?>
 <?php
 session_start();
 isset($_SESSION["email"]) ? "": header("Location: ./php/login/login.php") ;
@@ -14,6 +15,7 @@ $userName=$_SESSION["email"];
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="./js/script.js" defer></script>
   <title>Trunk</title>
 </head>
 
@@ -46,7 +48,7 @@ $userName=$_SESSION["email"];
       <!-- <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> -->
       <div class="align ">
         <div>
-          <img class="blanco" src="./img/add-folder.png" />
+          <img class="blanco" src="./img/add-folder.png" id="mybtn" />
 
         </div>
       </div>
@@ -80,6 +82,28 @@ $userName=$_SESSION["email"];
   </div>
   </div>
   </div>
+  <div id="myModal" class="modal24">
+
+  <!-- Modal content -->
+  <div class="modal-con">
+    <span class="close">&times;</span>
+  <form name="hola" class="row gy-2 gx-3 align-items-center" action="./php/CrearArchivo.php" method="POST">
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">Name</label>
+    <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
+  </div>
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select name="ext" class="form-select" id="autoSizingSelect">
+      <option value="Carpeta" selected>Folder</option>
+    
+    </select>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</div>
 </body>
 
 </html>

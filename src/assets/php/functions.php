@@ -50,6 +50,12 @@ function PonerArchivos($path){
             <div class="cardArchivo" style='background-image: url("./img/carpeta.png")';>
               <div><img class="iconTrunk" src=<?= extension($tipo_archivo)?>></div>
               <div><h3><?= $nombre_archivo?></h3></div>
+              <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
             </div>
     
                 <?php
