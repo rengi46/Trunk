@@ -9,7 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
   <title>Trunk</title>
 </head>
 
@@ -42,7 +44,7 @@
       <!-- <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> -->
       <div class="align ">
         <div>
-          <img class="blanco" src="./img/add-folder.png" />
+          <img class="blanco" src="./img/add-folder.png" id="mybtn"/>
 
         </div>
       </div>
@@ -72,12 +74,49 @@
     </div>
     <div class="contenedor">
     <div class="container-title">
-        <h4>?Ruta?</h4>
+        <h4><?=$direcion?></h4>
       </div>
       <div class="row row1">
 
     <?php PonerArchivos($direcion) ?></div>
   </div>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal24">
+
+  <!-- Modal content -->
+  <div class="modal-con">
+    <span class="close">&times;</span>
+<form name="hola" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">Name</label>
+    <input name="nameFile" type="text" class="form-control" id="autoSizingInput" placeholder="nameFile">
+  </div>
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+    <select name="ext" class="form-select" id="autoSizingSelect">
+      <option value="Carpeta" selected>Folder</option>
+      <?php
+      $ext=array("doc","csv","jpg","png","txt","ppt","odt","pdf","zip","rar","exe","svg","mp3","mp4");
+      foreach( $ext as $ex){
+        ?>
+        <option value=<?=".".$ex?>><?=$ex?></option>
+        <?php
+      }
+      ?>
+    </select>
+    <input type="hidden" name="url" value=<?=$direcion?> />
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</div>
+
+</div>
+
 </body>
 
 </html>

@@ -17,9 +17,7 @@ function ponerCarpeta($path){
             ?>
         <li class="nav-item">
           <a href="<?= $hre."?carpeta=".$value ?>" class="nav-link active" aria-current="page">
-            <svg class="bi me-2" width="16" height="16">
-              <use xlink:href="#home"></use>
-            </svg>
+           <img src="../img/carpeta.png" alt="" height="20px" width="20px">
             <?= $value ?>
           </a>
         </li>
@@ -39,16 +37,22 @@ function PonerArchivos($path){
   // Leo todos los ficheros de la carpeta
   foreach ($dir as $x => $value) {
     if( $value != "." && $value != ".."){
-          $nombre_archivo = obtener_nombre_archivo($path."/".$value);
-          $tipo_archivo = obtener_tipo_archivo($path."/".$value);
+         
     // Si es una carpeta
             if( is_dir($path."/".$value) ){
                 
             } else {
+              $nombre_archivo = obtener_nombre_archivo($path."/".$value);
+              $tipo_archivo = obtener_tipo_archivo($path."/".$value);
             ?>
             <div class="cardArchivo" style='background-image: url("./img/carpeta.png")';>
               <div><img class="iconTrunk" src=<?= extension($tipo_archivo)?>></div>
               <div><h3><?= $nombre_archivo?></h3></div>
+              <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#?file="<?=$nombre_archivo.$tipo_archivo?> class="social-link"><i class="fa fa-edit"></i></a></li>
+                    <li class="list-inline-item"><a href="#?file="<?=$nombre_archivo.$tipo_archivo?> class="social-link"><i class="fa fa-directions"></i></a></li>
+                    <li class="list-inline-item"><a href="#?file="<?=$nombre_archivo.$tipo_archivo?> class="social-link"><i class="fa fa-trash-alt"></i></a></li>
+                </ul>
             </div>
     
                 <?php
@@ -83,6 +87,7 @@ switch($i){
   case "pdf":
     return "./img/pdf.png";
     break;
+
   case "zip":
     return "./img/zip.png";
     break;
@@ -117,3 +122,5 @@ function obtener_nombre_archivo($path){
 }
 
 ?>
+
+

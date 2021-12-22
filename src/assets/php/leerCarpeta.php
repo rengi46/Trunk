@@ -1,7 +1,7 @@
 <?php require_once("./functions.php");
 
 $carepta_actual = $_GET["carpeta"];
-$ruta_carpeta=obtener_estructura_directorios("../root",$carepta_actual);
+$ruta_carpeta=obtener_estructura_directorios("../root".$_SESSION["email"],$carepta_actual);
 PonerArchivos($ruta_carpeta);
 
 echo $ruta_carpeta;
@@ -31,6 +31,8 @@ function obtener_estructura_directorios($ruta,$buscar){
                     }
                     if($bdf == null){
                         obtener_estructura_directorios($ruta_completa,$buscar);
+                    }
+                    if($bdf == null){
                     }
                     else {
                         return $bdf;

@@ -1,6 +1,6 @@
 <?php
 session_start();
-isset($_SESSION["email"]) ? header("Location: ./Assets/panel.php") : ""
+isset($_SESSION["email"]) ? header("Location: ../../index.php") : ""
 ?>
 <!DOCTYPE html>
 <html lang="en">
