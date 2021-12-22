@@ -1,5 +1,14 @@
 <?php
-$direcion=$_POST["url"];
+// require_once("./leerCarpeta.php");
+// echo $direcion;
+session_start();
+if(isset($_POST["url"])){
+    $direcion=$_POST["url"];
+    header("location: .././index2.php?carpeta=".$direcion);
+}else{
+    $direcion=("../root"."/".$_SESSION["email"]);
+    header("location: .././index.php");
+}
 if($_POST["ext"]=="Carpeta"){
     $fichero= $_POST["nameFile"];
     echo $fichero;
@@ -10,4 +19,3 @@ else{
     echo $fichero;
     fopen($direcion."/".$fichero,"w+");
 }
-header("location: .././index2.php?carpeta=".$direcion);
