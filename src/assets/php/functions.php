@@ -2,30 +2,62 @@
 
 
 function ponerCarpeta($path){
-    $hre="./php/leerCarpeta.php";
- // Abrimos la carpeta que nos pasan como parámetro
-    $dir = scandir($path);
- // Leo todos los ficheros de la carpeta
+  $hre="./php/leerCarpeta.php";
+  // Abrimos la carpeta que nos pasan como parámetro
+  $dir = scandir($path);
+  // Leo todos los ficheros de la carpeta
   if( dirname($path) != "." && dirname($path) != ".."){
-
-    }
-    foreach ($dir as $x => $value) {
+  foreach ($dir as $x => $value) {
+      
         if( $value != "." && $value != ".."){
     // Si es una carpeta
             if( is_dir($path."/".$value) ){
+              $direccionCompleta1 = realpath($path."/".$value);
                 // Muestro la carpeta
             ?>
-        <li class="nav-item">
-          <a href="<?= $hre."?carpeta=".$value ?>" class="nav-link active" aria-current="page">
-           <img src="../img/carpeta.png" alt="" height="20px" width="20px">
-            <?= $value ?>
-          </a>
-        </li>
+            <li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta1?>'>
+            <i class="expanded"><i class="far fa-folder-open"></i></i><?= $value?></a>&nbsp; &nbsp;<a href="#?file=<?=$nombre_archivo?>" class="social-link-side"><i class="fa fa-edit side-icon"></i></a><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link-side"><i class="fa fa-trash-alt side-icon"></i></a></span>
+              <ul><div id="page1">
+                  <?php $value2 = scandir($path."/".$value);
+                        foreach ($value2 as $x => $value3) {
+                          if( $value3 != "." && $value3 != ".."){
+                            if( is_dir($path."/".$value."/".$value3) ){
+                            $direccionCompleta2 = realpath($path."/".$value."/".$value3);
+                            ?>
+                            <li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta2?>'>
+                              <i class="expanded"><i class="far fa-folder-open"></i></i><?= $value3?></a>&nbsp; &nbsp;<a href="#?file=<?=$nombre_archivo?>" class="social-link-side"><i class="fa fa-edit side-icon"></i></a><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link-side"><i class="fa fa-trash-alt side-icon"></i></a></span>
+                                <ul><div id="Page2">
+                                    <?php $value4 = scandir($path."/".$value3);
+                                      foreach ($value4 as $x => $value5) {
+                                        if( $value5 != "." && $value5 != ".."){
+                                        if( is_dir($path."/".$value."/".$value3."/".$value5) ){
+                                          $direccionCompleta2 = realpath($path."/".$value."/".$value3."/".$value5);
+                                          ?><li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta3?>'>
+                                          <i class="expanded"><i class="far fa-folder-open"></i></i><?=$value5?> </a>&nbsp; &nbsp;<a href="#?file=<?=$nombre_archivo?>" class="social-link-side"><i class="fa fa-edit side-icon"></i></a><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link-side"><i class="fa fa-trash-alt side-icon"></i></a></span>
+                                            <ul><div id="page3">
+                                        </div>
+                                      </ul>
+                                          </li><?php
+                                        }
+                                      }
+                                    }
+                                      ?>
+                                </div>
+                              </ul>
+                            </li><?php
+                          }
+                      }
+                    }
+                  ?>
+              </div>
+            </ul>
+            </li>
             <?php
             // Si es un fichero
             }
         }
     }
+}
 }
 
 
@@ -47,9 +79,9 @@ function PonerArchivos($path){
               <div><img class="iconTrunk" src=<?= extension($tipo_archivo)?>></div>
               <div><h3><?= $nombre_archivo?></h3></div>
               <ul class="social mb-0 list-inline mt-3">
-                    <li  class="list-inline-item rename"><a class="social-link"><i class="fa fa-edit"></i></a></li>
-                    <li  class="list-inline-item move"><a href="#?file="<?=$nombre_archivo?> class="social-link"><i class="fa fa-directions"></i></a></li>
-                    <li class="list-inline-item"><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link"><i class="fa fa-trash-alt"></i></a></li>
+                    <li  class="list-inline-item move"><a href="#?file=<?=$nombre_archivo?>" class="social-link"><i class="fa fa-edit content-icon"></i></a></li>
+                    <li  class="list-inline-item rename"><a class="social-link"><i class="fa fa-directions content-icon"></i></a></li>
+                    <li class="list-inline-item"><a href="./php/deleteFile.php?file=<?= $nombre_archivo.".".$tipo_archivo?>" class="social-link"><i class="fa fa-trash-alt content-icon"></i></a></li>
                 </ul>
             </div>
     

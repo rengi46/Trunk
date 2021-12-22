@@ -1,4 +1,10 @@
-<?php require_once("./php/functions.php") ?>
+<?php require_once("./php/functions.php"); 
+session_start();
+$nuevaDireccon = ("./root"."/".$_SESSION["email"]);
+$nuevaDirecconCompleta = realpath($nuevaDireccon);
+$direcion=$_GET["carpeta"];
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +17,13 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/arbol.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
   <script src="./js/script.js" defer></script>
   <title>Trunk</title>
 </head>
@@ -51,10 +64,19 @@
       </div>
       <!-- </a> -->
       <hr>
-      <ul class="align nav nav-pills flex-column mb-auto">
-        <?php $direcion=$_GET["carpeta"];
-         ponerCarpeta("$direcion") ?>
-      </ul>
+      <div class="tree ">
+        <ul>
+          <li><span><a style="color:#000; text-decoration:none;" href="./index2.php?carpeta=<?=$nuevaDirecconCompleta?>"></i>
+            <i class="expanded"><i class="far fa-folder-open"></i></i> <?=$_SESSION['email']?></a></span>
+              <ul>
+                <div id="Web" class="show">
+              <?php 
+                ponerCarpeta($nuevaDireccon); ?> 
+                </div>
+              </ul>
+          </li>
+        </ul>
+      </div>
       <hr>
       <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
@@ -75,7 +97,7 @@
     </div>
     <div class="contenedor">
     <div class="container-title">
-        <h4><?=$direcion?></h4>
+        <input class='route'><?=$direcion?></input>
       </div>
       <div class="row row1">
 
@@ -120,7 +142,7 @@
 <div id="myModal2" class="modal25">
 
   <!-- Modal content -->
-  <div class="modal-con2">
+  <div class="modal-con">
     <span class="close">&times;</span>
   <form name="hola2" class="row gy-2 gx-3 align-items-center" action="../assets/php/CrearArchivo.php" method="POST">
   <div class="col-auto">
