@@ -1,1 +1,9 @@
-[{"name":"erick ayala","email":"erick.ayala.3a@gmail.com","password":"1234"},{"name":"patata","email":"pataa@gmail.com","password":"1234"},{"name":"pene","email":"peneGrande@gmail.com","password":"vagina"}]
+[
+  {
+    "name": "erick ayala",
+    "email": "erick.ayala.3a@gmail.com",
+    "password": "1234"
+  },
+  { "name": "patata", "email": "pataa@gmail.com", "password": "1234" },
+  { "name": "pene", "email": "peneGrande@gmail.com", "password": "vagina" }
+]
