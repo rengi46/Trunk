@@ -27,16 +27,16 @@ isset($_SESSION["email"]) ? header("Location: ./Assets/panel.php") : ""
                     <input name="email" type="email" id="typeEmailX" class="form-control form-control-lg" />
                     <label class="form-label" for="typeEmailX">Email</label>
                 </div>
-            
+
                 <div class="form-outline form-white mb-4">
                     <input name="password" type="password" id="typePasswordX" class="form-control form-control-lg" />
                     <label class="form-label" for="typePasswordX">Password</label>
                     <br>
                     <label class="form-label" for="typePasswordX"><?= isset($_GET["InvalidPassword"]) ? "Invalid Email or Password" : ""?></label>
                 </div>
-              
+
               <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-              
+
               <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
             </form>
 
