@@ -1,16 +1,20 @@
 <?php
-$direcion=$_POST["url"];
 
-echo 'a';
-
-echo $direcion;
-
-if($_POST["ext"]=="Carpeta"){
-    $fichero= $_POST["newNameFile"];
-    mkdir($direcion."/".$fichero."/");
+function cambiarNombre($nuevoNombre){
+    $direcion=$_POST["url"];
+  // Abrimos la carpeta que nos pasan como parámetro
+    $dir = scandir($direcion);
+  // Leo todos los ficheros de la carpeta
+    foreach ($dir as $x => $value) {
+        if( $value != "." && $value != ".."){   
+    // Si es una carpeta
+            if( is_dir($direcion."/".$value) ){
+                rename($direcion."/".$value, direcion."/".$nuevoNombre);
+                
+            } else {
+                rename($direcion."/".$value, direcion."/".$nuevoNombre);
+            }
+        }
+    }
+    /* header("location: .././index2.php?carpeta=".$direcion); */
 }
-else{
-    $fichero= $_POST["newNameFile"].$_POST["ext"];
-    fopen($direcion."/".$fichero,"w+");
-}
-/* header("location: .././index2.php?carpeta=".$direcion); */
