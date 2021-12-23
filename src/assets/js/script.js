@@ -2,13 +2,15 @@
 var btn = document.getElementById("mybtn");
 var SubirFichero = document.getElementById("SubirFichero");
 var modal = document.getElementById("myModal");
+var urlA = document.getElementById("urlA");
+console.log(urlA);
+var a=urlA.split("/");
 //modal modificar
 var move = document.getElementsByClassName("move");
 var rename = document.getElementsByClassName("rename");
 var modal2 = document.getElementById("myModal2");
 var modal3 = document.getElementById("myModal3");
 
-console.log(modal2);
 btn.onclick = function () {
   modal.style.display = "block";
 }

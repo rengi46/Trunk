@@ -29,8 +29,8 @@ $direcion=$_GET["carpeta"];
 
 <body>
   <header class="p-3 negroHeader text-white ">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-space-between   headTrunk">
+    <div class="container" style="min-width: 100%;"">
+      <div class="d-flex flex-wrap align-items-center justify-content-space-around   headTrunk" style="width: 100%;">
         <div>
 
           <img class="iconTrunk" src="./img/icono trrunk.png" alt="">
@@ -43,7 +43,7 @@ $direcion=$_GET["carpeta"];
         </form>
 
         <div class="text-end">
-          <a href="./php/login/login.php">
+          <a href="./php/login/close_session.php">
             <button type="button" class="btn btn-outline-light me-2">Logout</button>
           </a>
           </a>
@@ -84,7 +84,7 @@ $direcion=$_GET["carpeta"];
     </div>
     <div class="contenedor negroContenido">
     <div class="container-title">
-        <input class='' style='width:100%' value='<?=$direcion?>'></input><button onclick="myFunction()">Copy text</button>
+        <input class='' id="urlA" style='width:100%' value='<?=$direcion?>'></input><button onclick="myFunction()">Copy text</button>
       </div>
       <div class="row row1">
 

@@ -38,7 +38,7 @@
     -webkit-border-radius: 5px;
     height: auto;
     width: 200px;
-    background-color: aqua;
+    background-color: rgb(167, 167, 167);
     border: 2px solid #000;
     border-radius: 3px;
     display: inline-block;
@@ -57,7 +57,7 @@
 }
 
 .tree li span:hover {
-    background: hotpink;
+    background: rgb(29, 0, 0);
     border: 2px solid #94a0b4;
 }
 
