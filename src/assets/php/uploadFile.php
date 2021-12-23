@@ -1,51 +1,44 @@
+
+
 <?php
-$path = $_POST['url'];
-$target_file = $path . basename($_FILES["fileToUpload"]["name"]);
-$info = $_FILES["fileToUpload"]["tmp_name"];
-echo $info;
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $currentDirectory =  $_POST['url'];
 
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-  if($check !== false) {
-    echo "File is an image - " . $check["mime"] . ".";
-    $uploadOk = 1;
-  } else {
-    echo "File is not an image.";
-    $uploadOk = 0;
-  }
-}
+    $errors = []; // Store errors here
 
-// Check if file already exists
-if (file_exists($target_file)) {
-  echo "Sorry, file already exists.";
-  $uploadOk = 0;
-}
+    $fileExtensionsAllowed = ["doc","csv","jpg","png","txt","ppt","odt","pdf","zip","rar","exe","svg","mp3","mp4"]; // These will be the only file extensions allowed 
 
-// Check file size
-if ($_FILES["fileToUpload"]["size"] > 5000000) {
-  echo "Sorry, your file is too large.";
-  $uploadOk = 0;
-}
+    $fileName = $_FILES['fileToUpload']['name'];
+    $fileSize = $_FILES['fileToUpload']['size'];
+    $fileTmpName  = $_FILES['fileToUpload']['tmp_name'];
+    $fileType = $_FILES['fileToUpload']['type'];
+    $fileExtension = strtolower(end(explode('.',$fileName)));
 
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" && $imageFileType != "doc" && $imageFileType != "pdf" && $imageFileType != "mp3") {
-  echo "Sorry, only JPG, JPEG, PNG, GIF, PDF, DOC & MP3 files are allowed.";
-  $uploadOk = 0;
-}
+    $uploadPath = $currentDirectory . basename($fileName); 
 
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-  } else {
-    echo "Sorry, there was an error uploading your file.";
-  }
-}
+    if (isset($_POST['submit'])) {
+
+      if (! in_array($fileExtension,$fileExtensionsAllowed)) {
+        $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
+      }
+
+      if ($fileSize > 4000000) {
+        $errors[] = "File exceeds maximum size (4MB)";
+      }
+
+      if (empty($errors)) {
+        $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
+
+        if ($didUpload) {
+          echo "The file " . basename($fileName) . " has been uploaded";
+        } else {
+          echo "An error occurred. Please contact the administrator.";
+        }
+      } else {
+        foreach ($errors as $error) {
+          echo $error . "These are the errors" . "\n";
+        }
+      }
+
+    }
+    header("location: ../index2.php?carpeta=$currentDirectory")
 ?>

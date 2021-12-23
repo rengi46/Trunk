@@ -4,7 +4,7 @@ var SubirFichero = document.getElementById("SubirFichero");
 var modal = document.getElementById("myModal");
 var urlA = document.getElementById("copyInput");
 console.log(urlA);
-var a=urlA.split("/");
+// var a=urlA.split("/");
 //modal modificar
 var move = document.getElementsByClassName("move");
 var rename = document.getElementsByClassName("rename");
