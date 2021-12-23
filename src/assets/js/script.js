@@ -2,7 +2,7 @@
 var btn = document.getElementById("mybtn");
 var SubirFichero = document.getElementById("SubirFichero");
 var modal = document.getElementById("myModal");
-var urlA = document.getElementById("urlA");
+var urlA = document.getElementById("copyInput");
 console.log(urlA);
 var a=urlA.split("/");
 //modal modificar
