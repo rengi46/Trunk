@@ -18,6 +18,7 @@ $direcion=$_GET["carpeta"];
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/arbol.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -84,7 +85,7 @@ $direcion=$_GET["carpeta"];
     </div>
     <div class="contenedor negroContenido">
     <div class="container-title">
-        <input class='' id="urlA" style='width:100%' value='<?=$direcion?>'></input><button onclick="myFunction()">Copy text</button>
+        <input id='copyInput' style='width:100%' value='<?=$direcion?>'></input><button onclick="myFunction()"><i class="bi bi-clipboard-plus"></i></button>
       </div>
       <div class="row row1">
 
@@ -127,7 +128,6 @@ $direcion=$_GET["carpeta"];
 </div>
 
 <div id="myModal2" class="modal25">
-
   <!-- Modal content -->
   <div class="modal-con">
     <span class="close">&times;</span>
@@ -142,16 +142,16 @@ $direcion=$_GET["carpeta"];
   </div>
   </form>
 </div>
+    </div>
 
 
 <div id="myModal3" class="modal26">
-
   <!-- Modal content -->
   <div class="modal-con">
     <span class="close">&times;</span>
   <form name="hola3" class="row gy-2 gx-3 align-items-center" action="../assets/php/deleteDirectory.php" method="POST">
   <div class="col-auto">
-    <label class="visually-hidden" for="autoSizingInput">You are going to delete the file.</br>Are you sure?</label>
+    <label for="autoSizingInput">You are going to delete the file.</br>Are you sure?</label>
     <input type="hidden" name="url" value=<?=$direcion?> />
   </div>
   <div class="col-auto">
@@ -159,39 +159,24 @@ $direcion=$_GET["carpeta"];
   </div>
   </form>
 </div>
+    </div>
 
-<div id="myModal3" class="modal26">
-
+<div id="myModal4" class="modal27">
   <!-- Modal content -->
   <div class="modal-con">
     <span class="close">&times;</span>
-  <form name="hola3" class="row gy-2 gx-3 align-items-center" action="../assets/php/deleteDirectory.php" method="POST">
-  <div class="col-auto">
-    <label class="visually-hidden" for="autoSizingInput">You are going to delete the file.</br>Are you sure?</label>
-    <input type="hidden" name="url" value=<?=$direcion?> />
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary">Delete</button>
-  </div>
+  <form class="row gy-2 gx-3 align-items-center" action="../assets/php/uploadFile.php" method="POST" enctype="multipart/form-data">
+    <div class="col-auto">
+      <label for="autoSizingInput">Upload a File:</label>
+      <input type="hidden" name="url" value=<?=$direcion?>/>
+      <input type="file" name="fileToUpload" id="fileToUpload">
+    </div>
+    <div class="col-auto">
+      <input type="submit" name='submit' class="btn btn-primary" value="Start Upload"></input>
+    </div>
   </form>
 </div>
-
-<div id="myModal3" class="modal26">
-
-  <!-- Modal content -->
-  <div class="modal-con">
-    <span class="close">&times;</span>
-  <form name="hola3" class="row gy-2 gx-3 align-items-center" action="../assets/php/deleteDirectory.php" method="POST">
-  <div class="col-auto">
-    <input type="file" name="fichero">
-    <input type="hidden" name="url" value=<?=$direcion?> />
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary">Delete</button>
-  </div>
-  </form>
-</div>
-
+    </div>
 
 </body>
 

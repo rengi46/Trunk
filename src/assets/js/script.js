@@ -10,6 +10,9 @@ var move = document.getElementsByClassName("move");
 var rename = document.getElementsByClassName("rename");
 var modal2 = document.getElementById("myModal2");
 var modal3 = document.getElementById("myModal3");
+var modal4 = document.getElementById("myModal4");
+//modal upload
+var uploadBtn = document.getElementById('SubirFichero');
 
 btn.onclick = function () {
   modal.style.display = "block";
@@ -26,6 +29,11 @@ for (const re of rename) {
   })
 }
 
+uploadBtn.addEventListener('click', function () {
+  console.log('a');
+  modal4.style.display = "block";
+})
+
 
 var span = document.getElementsByClassName("close");
 // When the user clicks on <span> (x), close the modal
@@ -34,6 +42,7 @@ for (const sa of span) {
     modal.style.display = "none";
     modal2.style.display = "none";
     modal3.style.display = "none";
+    modal4.style.display = "none";
   }
 }
 // When the user clicks anywhere outside of the modal, close it
@@ -42,7 +51,25 @@ window.onclick = function (event) {
     modal.style.display = "none";
     modal2.style.display = "none";
     modal3.style.display = "none";
+    modal4.style.display = "none";
   }
 }
 
-//Buscador
+//Copiar
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("copyInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  navigator.clipboard.writeText(copyText.value);
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+
+//
