@@ -8,7 +8,13 @@ $ruta_carpeta=obtener_estructura_directorios("../root"."/".$_SESSION["email"],$b
 
 
 function buscar ($nombre){
-    
+    $path = $_POST['url'];
+    $find1 = scandir($path);
+    foreach ($find1 as $key => $value) {
+        if(issdir($value)){
+            $find2 = scandir($value);
+        }
+    }
 }
 
 echo $bdf;
