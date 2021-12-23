@@ -28,9 +28,9 @@ $direcion=$_GET["carpeta"];
 </head>
 
 <body>
-  <header class="p-3 bg-dark text-white ">
+  <header class="p-3 negroHeader text-white ">
     <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start  headTrunk">
+      <div class="d-flex flex-wrap align-items-center justify-content-space-between   headTrunk">
         <div>
 
           <img class="iconTrunk" src="./img/icono trrunk.png" alt="">
@@ -52,7 +52,7 @@ $direcion=$_GET["carpeta"];
     </div>
   </header>
   <div class="pagina" style="height:95vh">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark SidebarPequeño">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white negroLateral">
       <!-- <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> -->
       <div class="align ">
         <div>
@@ -82,7 +82,7 @@ $direcion=$_GET["carpeta"];
         </a>
       </div>
     </div>
-    <div class="contenedor">
+    <div class="contenedor negroContenido">
     <div class="container-title">
         <input class='' style='width:100%' value='<?=$direcion?>'></input><button onclick="myFunction()">Copy text</button>
       </div>

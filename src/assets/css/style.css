@@ -134,8 +134,14 @@
     justify-content: space-between !important;
 }
 
-.SidebarPequeño {
-    width: 20% !important;
+.negroHeader{
+    background-color: rgb(24, 24, 24) !important;
+}
+.negroLateral{
+    background-color: rgb(26, 0, 0) !important;
+}
+.negroContenido{
+    background-color: rgb(54, 54, 54) !important;
 }
 
 .SidebarGrande {
