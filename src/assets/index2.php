@@ -56,7 +56,7 @@ $direcion=$_GET["carpeta"];
       <!-- <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> -->
       <div class="align ">
         <div>
-          <img class="uploadButton" src="./img/upload.png" />
+          <img class="uploadButton" src="./img/upload.png" id="SubirFichero" />
           <img class="blanco" src="./img/add-folder.png" id="mybtn" />
 
         </div>
@@ -160,7 +160,37 @@ $direcion=$_GET["carpeta"];
   </form>
 </div>
 
+<div id="myModal3" class="modal26">
 
+  <!-- Modal content -->
+  <div class="modal-con">
+    <span class="close">&times;</span>
+  <form name="hola3" class="row gy-2 gx-3 align-items-center" action="../assets/php/deleteDirectory.php" method="POST">
+  <div class="col-auto">
+    <label class="visually-hidden" for="autoSizingInput">You are going to delete the file.</br>Are you sure?</label>
+    <input type="hidden" name="url" value=<?=$direcion?> />
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Delete</button>
+  </div>
+  </form>
+</div>
+
+<div id="myModal3" class="modal26">
+
+  <!-- Modal content -->
+  <div class="modal-con">
+    <span class="close">&times;</span>
+  <form name="hola3" class="row gy-2 gx-3 align-items-center" action="../assets/php/deleteDirectory.php" method="POST">
+  <div class="col-auto">
+    <input type="file" name="fichero">
+    <input type="hidden" name="url" value=<?=$direcion?> />
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary">Delete</button>
+  </div>
+  </form>
+</div>
 
 
 </body>

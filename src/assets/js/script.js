@@ -1,5 +1,6 @@
 //modal creacion
 var btn = document.getElementById("mybtn");
+var SubirFichero = document.getElementById("SubirFichero");
 var modal = document.getElementById("myModal");
 //modal modificar
 var move = document.getElementsByClassName("move");
