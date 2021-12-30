@@ -19,11 +19,8 @@ foreach($files as $file){
     // Nombre del archivo
     $fileName      = $data[0];
     // Extensión del archivo 
-    $fileExtension = $data[1];
-
-        
+    $fileExtension = $data[1];  
         if( is_dir($path."/".$file) ){
-
             buscar($path."/".$file,$code);
 
         }

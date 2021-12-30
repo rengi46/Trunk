@@ -1,64 +1,30 @@
 <?php
 
-
 function ponerCarpeta($path){
   $hre="./php/leerCarpeta.php";
   // Abrimos la carpeta que nos pasan como parámetro
   $dir = scandir($path);
   // Leo todos los ficheros de la carpeta
-  if( dirname($path) != "." && dirname($path) != ".."){
   foreach ($dir as $x => $value) {
-      
         if( $value != "." && $value != ".."){
     // Si es una carpeta
-            if( is_dir($path."/".$value) ){
+          if( is_dir($path."/".$value) ){
               $direccionCompleta1 = realpath($path."/".$value);
                 // Muestro la carpeta
             ?>
             <li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta1?>'>
             <i class="expanded"><i class="far fa-folder-open"></i></i><?= $value?></a>&nbsp; &nbsp;<a  class="social-link-side"><i class="fa fa-edit side-icon move"></i></a><a class="social-link-side"><i class="fa fa-trash-alt side-icon rename"></i></a></span>
-              <ul><div id="page1">
-                  <?php $value2 = scandir($path."/".$value);
-                        foreach ($value2 as $x => $value3) {
-                          if( $value3 != "." && $value3 != ".."){
-                            if( is_dir($path."/".$value."/".$value3) ){
-                            $direccionCompleta2 = realpath($path."/".$value."/".$value3);
-                            ?>
-                            <li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta2?>'>
-                              <i class="expanded"><i class="far fa-folder-open"></i></i><?= $value3?></a>&nbsp; &nbsp;<a  class="social-link-side"><i class="fa fa-edit side-icon move"></i></a><a  class="social-link-side"><i class="fa fa-trash-alt side-icon rename"></i></a></span>
-                                <ul><div id="Page2">
-                                    <?php $value4 = scandir($direccionCompleta2);
-                                      foreach ($value4 as $x => $value5) {
-                                        if( $value5 != "." && $value5 != ".."){
-                                        if( is_dir($path."/".$value."/".$value3."/".$value5) ){
-                                          $direccionCompleta3 = realpath($path."/".$value."/".$value3."/".$value5);
-                                          ?><li><span><a style="color:#000; text-decoration:none;" href='./index2.php?carpeta=<?=$direccionCompleta3?>'>
-                                          <i class="expanded"><i class="far fa-folder-open"></i></i><?=$value5?> </a>&nbsp; &nbsp;<a  class="social-link-side"><i class="fa fa-edit side-icon move"></i></a><a  class="social-link-side"><i class="fa fa-trash-alt side-icon rename"></i></a></span>
-                                            <ul><div id="page3">
-                                        </div>
-                                      </ul>
-                                          </li><?php
-                                        }
-                                      }
-                                    }
-                                      ?>
-                                </div>
-                              </ul>
-                            </li><?php
-                          }
-                      }
-                    }
-                  ?>
-              </div>
-            </ul>
-            </li>
-            <?php
-            // Si es un fichero
-            }
+              <ul><div id="page<?= $x?>">
+                <?php
+                ponerCarpeta($direccionCompleta1);
+                ?>
+                </div></ul>
+                <?php
         }
-    }
+      }
+  }
 }
-}
+
 
 
 function PonerArchivos($path){
